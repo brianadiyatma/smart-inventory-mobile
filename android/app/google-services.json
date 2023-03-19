@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "755553295037",
+    "project_id": "smart-inventory-dev",
+    "storage_bucket": "smart-inventory-dev.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:755553295037:android:73c29e43bd005cf1de35d4",
+        "android_client_info": {
+          "package_name": "com.example.inka_smart_inventory_mobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "755553295037-o2atilhlv8g9v6nh19rsli63m83jrfss.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBT_KArxL_Szcp82GQML56lEI_1yE3fJC4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "755553295037-o2atilhlv8g9v6nh19rsli63m83jrfss.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

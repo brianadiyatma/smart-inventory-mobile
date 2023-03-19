@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\lib",
+    "\\lib\\app",
+    "\\lib\\app\\modules",
+    "\\lib\\app\\modules\\bpm",
+    "\\lib\\app\\modules\\bpm\\informasi_detail_bpm",
+    "\\lib\\app\\modules\\bpm\\informasi_detail_bpm\\views"
+  ],
+  "SelectedNode": "\\lib\\app\\modules\\bpm\\informasi_detail_bpm\\views\\informasi_detail_bpm_view.dart",
+  "PreviewInSolutionExplorer": false
+}
