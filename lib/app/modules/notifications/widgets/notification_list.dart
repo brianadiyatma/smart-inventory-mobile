@@ -29,7 +29,7 @@ class NotificationList extends StatelessWidget {
             child: Card(
               child: InkWell(
                 onTap: () {
-                  Get.to(AppPages.LOGIN);
+                  Get.toNamed(Routes.MY_TRANSACTIONS);
                 },
                 splashColor: AppColor.primary.shade50,
                 child: Padding(

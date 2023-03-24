@@ -64,15 +64,17 @@ class DetailTransaksiSttpController extends GetxController {
   void postTransactionComplete() async {
     isLoadingButton.value = true;
     error.value = '';
+    print(sttpInformasiDetail.value.data!.id);
 
     try {
       Response response = await STTPService().doneSTTP(box.read('token'), {
         "id": sttpInformasiDetail.value.data!.id,
       });
+
       if (response.statusCode == 200) {
         Get.arguments['refreshes']();
         Get.back();
-        print('hgghgh');
+
         CustomSnackbar.snackbarSuccess(
             title: "Done: ", message: "Transaction Done");
       }

@@ -33,6 +33,7 @@ abstract class Routes {
   static const DETAIL_MATERIALV2 = _Paths.DETAIL_MATERIALV2;
   static const DETAIL_GUDANGV2 = _Paths.DETAIL_GUDANGV2;
   static const FORGOT_PASSWORD = _Paths.FORGOT_PASSWORD;
+  static const DOCUMENTTYPE = _Paths.DOCUMENTTYPE;
 }
 
 abstract class _Paths {
@@ -66,4 +67,5 @@ abstract class _Paths {
   static const DETAIL_MATERIALV2 = '/detail-materialv2';
   static const DETAIL_GUDANGV2 = '/detail-gudangv2';
   static const FORGOT_PASSWORD = '/forgot-password';
+  static const DOCUMENTTYPE = '/documenttype';
 }

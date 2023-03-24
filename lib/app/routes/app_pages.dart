@@ -1,6 +1,5 @@
 import 'package:get/get.dart';
-import 'package:inka_smart_inventory_mobile/app/modules/forgot_password/bindings/forgot_password_binding.dart';
-import 'package:inka_smart_inventory_mobile/app/modules/forgot_password/views/forgot_password_view.dart';
+
 import '../modules/bottom_navigator/bindings/bottom_navigator_binding.dart';
 import '../modules/bottom_navigator/views/bottom_navigator_view.dart';
 import '../modules/bpm/detail_transaksi_bpm/bindings/detail_transaksi_bpm_binding.dart';
@@ -11,6 +10,10 @@ import '../modules/dashboard/bindings/dashboard_binding.dart';
 import '../modules/dashboard/views/dashboard_view.dart';
 import '../modules/dashboardv2/bindings/dashboardv2_binding.dart';
 import '../modules/dashboardv2/views/dashboardv2_view.dart';
+import '../modules/documenttype/bindings/documenttype_binding.dart';
+import '../modules/documenttype/views/documenttype_view.dart';
+import '../modules/forgot_password/bindings/forgot_password_binding.dart';
+import '../modules/forgot_password/views/forgot_password_view.dart';
 import '../modules/gudang/detail_gudang/bindings/detail_gudang_binding.dart';
 import '../modules/gudang/detail_gudang/views/detail_gudang_view.dart';
 import '../modules/gudang/gudang_view/bindings/gudang_binding.dart';
@@ -158,5 +161,10 @@ class AppPages {
         name: _Paths.FORGOT_PASSWORD,
         page: (() => const ForgotPasswordView()),
         binding: ForgotPasswordBinding()),
+    GetPage(
+      name: _Paths.DOCUMENTTYPE,
+      page: () => const DocumenttypeView(),
+      binding: DocumenttypeBinding(),
+    ),
   ];
 }

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:inka_smart_inventory_mobile/app/modules/transactions/controllers/transactions_controller.dart';
+import 'package:inka_smart_inventory_mobile/app/modules/transactions/widgets/filter_dialog.dart';
 
 class SearchField extends StatelessWidget {
   const SearchField({
@@ -42,7 +43,7 @@ class SearchField extends StatelessWidget {
                       query: controller.searchController.text);
                 },
                 decoration: const InputDecoration(
-                  hintText: 'Enter document number',
+                  hintText: 'Document Number',
                   border: InputBorder.none,
                   contentPadding: EdgeInsets.only(top: 15),
                   prefixIcon: Icon(CupertinoIcons.search),
@@ -53,92 +54,12 @@ class SearchField extends StatelessWidget {
           const SizedBox(
             width: 20,
           ),
+          FilterDialog(controller: controller),
+          const SizedBox(
+            width: 20,
+          ),
           GestureDetector(
-            onTap: () {
-              Get.defaultDialog(
-                title: "Filtering  Data : ",
-                cancel: TextButton(
-                  style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(Colors.white)),
-                  child: const Text("Cancel",
-                      style: TextStyle(color: Colors.black)),
-                  onPressed: () => Navigator.of(context).pop(),
-                ),
-                confirm: TextButton(
-                  style: ButtonStyle(
-                      backgroundColor:
-                          MaterialStateProperty.all(Colors.blue[800])),
-                  child: const Text(
-                    "Confirm",
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  onPressed: () => controller.confirmFilter(),
-                ),
-                content: GetBuilder<TransactionsController>(
-                    builder: (_) => Flexible(
-                          child: SingleChildScrollView(
-                            child: Column(
-                              children: [
-                                Obx(
-                                  () {
-                                    return ExpansionTile(
-                                      initiallyExpanded: true,
-                                      title: Text("Document Status".tr,
-                                          style: Get.textTheme.bodyText2),
-                                      children: List.generate(
-                                          controller.statusDoc.length, (index) {
-                                        return CheckboxListTile(
-                                            title: Text(
-                                              controller.statusDoc
-                                                  .elementAt(index)["title"],
-                                              style: Get.textTheme.bodyText1,
-                                              overflow: TextOverflow.fade,
-                                              softWrap: false,
-                                              maxLines: 1,
-                                            ),
-                                            value: controller.statusDoc
-                                                .elementAt(index)['isCheck'],
-                                            onChanged: ((value) {
-                                              controller.statusChange(
-                                                  value!, index);
-                                              controller.update();
-                                            }));
-                                      }),
-                                    );
-                                  },
-                                ),
-                                Obx(
-                                  () {
-                                    return ExpansionTile(
-                                      title: Text("Document Type".tr,
-                                          style: Get.textTheme.bodyText2),
-                                      children: List.generate(
-                                          controller.typeDoc.length, (index) {
-                                        return CheckboxListTile(
-                                            title: Text(
-                                              controller.typeDoc
-                                                  .elementAt(index)["title"],
-                                              style: Get.textTheme.bodyText1,
-                                              overflow: TextOverflow.fade,
-                                              softWrap: false,
-                                              maxLines: 1,
-                                            ),
-                                            value: controller.typeDoc
-                                                .elementAt(index)['isCheck'],
-                                            onChanged: ((value) {
-                                              controller.typeChange(
-                                                  value!, index);
-                                            }));
-                                      }),
-                                    );
-                                  },
-                                )
-                              ],
-                            ),
-                          ),
-                        )),
-              );
-            },
+            onTap: () => Get.toNamed('/documenttype'),
             child: Container(
               width: 45,
               height: 45,
@@ -155,7 +76,7 @@ class SearchField extends StatelessWidget {
                 ],
               ),
               child: const Icon(
-                CupertinoIcons.list_bullet,
+                CupertinoIcons.add,
                 color: Colors.white,
                 size: 28,
               ),
