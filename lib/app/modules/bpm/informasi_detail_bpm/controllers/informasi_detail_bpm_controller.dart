@@ -110,7 +110,7 @@ class InformasiDetailBpmController extends GetxController {
                 "qty_out": kuantitasController.text,
               }));
         }
-        print(response.statusCode);
+
         if (response.statusCode == 200) {
           Get.arguments['refresh']();
           Get.back();
@@ -123,7 +123,7 @@ class InformasiDetailBpmController extends GetxController {
           Get.back();
         }
       } on DioError catch (e) {
-        // print(e.response!.data.toString());
+
         if (e.response?.statusCode == 404) {
         } else if (e.response?.statusCode == 401) {
           Get.offAndToNamed('/login');

@@ -49,6 +49,7 @@ class DetailTransaksiBpmController extends GetxController {
         this.bpmInformasiDetail.value = bpmInformasiDetail;
       }
     } on DioError catch (e) {
+      print(docNum);
       if (e.response?.statusCode == 404) {
         error.value = "Data not found";
       } else if (e.response?.statusCode == 401) {
@@ -81,6 +82,7 @@ class DetailTransaksiBpmController extends GetxController {
             title: "Done: ", message: "Transaction Done");
       }
     } on DioError catch (e) {
+      print(e.response!.data.toString());
       if (e.response?.statusCode == 404) {
         error.value = "Data not found";
       } else if (e.response?.statusCode == 401) {
