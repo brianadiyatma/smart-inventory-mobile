@@ -162,7 +162,7 @@ class InformasiDetailSttpView extends GetView<InformasiDetailSttpController> {
                                 BuildItemTableInfo(
                                     context: context,
                                     text:
-                                        ": ${controller.informasiDetailSTTP.value.data!.materialCode}"),
+                                        ": ${controller.informasiDetailSTTP.value.data!.materialCode == null ? "-" : controller.informasiDetailSTTP.value.data!.materialCode}"),
                               ]),
                               TableRow(children: [
                                 BuildItemTableInfo(
@@ -170,7 +170,7 @@ class InformasiDetailSttpView extends GetView<InformasiDetailSttpController> {
                                 BuildItemTableInfo(
                                     context: context,
                                     text:
-                                        ": ${controller.informasiDetailSTTP.value.data!.materialDesc}"),
+                                        ": ${controller.informasiDetailSTTP.value.data!.materialDesc == null ? "-" : controller.informasiDetailSTTP.value.data!.materialDesc}"),
                               ]),
                               TableRow(children: [
                                 BuildItemTableInfo(
@@ -186,7 +186,7 @@ class InformasiDetailSttpView extends GetView<InformasiDetailSttpController> {
                                 BuildItemTableInfo(
                                     context: context,
                                     text:
-                                        ": ${controller.informasiDetailSTTP.value.data!.uom}"),
+                                        ": ${controller.informasiDetailSTTP.value.data!.uom == null ? "-" : controller.informasiDetailSTTP.value.data!.uom}"),
                               ]),
                               TableRow(children: [
                                 BuildItemTableInfo(
@@ -194,7 +194,7 @@ class InformasiDetailSttpView extends GetView<InformasiDetailSttpController> {
                                 BuildItemTableInfo(
                                     context: context,
                                     text:
-                                        ": ${controller.informasiDetailSTTP.value.data!.qtyPo!}"),
+                                        ": ${controller.informasiDetailSTTP.value.data!.qtyPo! == null ? "-" : controller.informasiDetailSTTP.value.data!.qtyPo.toString()}"),
                               ]),
                               TableRow(children: [
                                 BuildItemTableInfo(
@@ -202,7 +202,7 @@ class InformasiDetailSttpView extends GetView<InformasiDetailSttpController> {
                                 BuildItemTableInfo(
                                     context: context,
                                     text:
-                                        ": ${controller.informasiDetailSTTP.value.data!.qtyGr105}"),
+                                        ": ${controller.informasiDetailSTTP.value.data!.qtyGr105 == null ? "-" : controller.informasiDetailSTTP.value.data!.qtyGr105.toString()}"),
                               ]),
                               TableRow(children: [
                                 BuildItemTableInfo(
@@ -210,7 +210,7 @@ class InformasiDetailSttpView extends GetView<InformasiDetailSttpController> {
                                 BuildItemTableInfo(
                                     context: context,
                                     text:
-                                        ": ${controller.informasiDetailSTTP.value.data!.qtyNcr}"),
+                                        ": ${controller.informasiDetailSTTP.value.data!.qtyNcr == null ? "-" : controller.informasiDetailSTTP.value.data!.qtyNcr.toString()}"),
                               ]),
                               TableRow(children: [
                                 BuildItemTableInfo(
@@ -697,7 +697,7 @@ class InformasiDetailSttpView extends GetView<InformasiDetailSttpController> {
                                         top: 8, bottom: 8),
                                     height: 50,
                                     child: Text(
-                                      "${controller.informasiDetailSTTP.value.data!.qtyLeft.toString()} Items Unprocessed",
+                                      "${controller.informasiDetailSTTP.value.data!.qtyLeft == null ? "-" : controller.informasiDetailSTTP.value.data!.qtyLeft} Items Unprocessed",
                                       style: const TextStyle(
                                           fontSize: 12,
                                           fontWeight: FontWeight.bold),

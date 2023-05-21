@@ -35,6 +35,9 @@ class NotificationsController extends GetxController {
       this.notificationsData.value = notifications;
       notificationsList.value += notificationsData.value.data!;
       isLoading.value = false;
+      if (page == lastPage) {
+        isLastPage.value = true;
+      }
 
       // print(notificationsData.value);
     } on DioError catch (e) {
@@ -64,6 +67,8 @@ class NotificationsController extends GetxController {
     String token = box.read('token');
     try {
       if (page != lastPage + 1) {
+        print(page);
+        print(lastPage);
         Response response = await NotificationsService()
             .getNotif(token: token, params: {"page": page});
         Notifications notifications =

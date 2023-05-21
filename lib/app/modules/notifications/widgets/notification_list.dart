@@ -94,7 +94,7 @@ class NotificationList extends StatelessWidget {
                                                 height: 2,
                                               ),
                                               Text(
-                                                "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                                                bodyNotification.toString(),
                                                 style:
                                                     AppTextStyle.defaultTheme(
                                                             context)
